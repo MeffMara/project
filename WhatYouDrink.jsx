@@ -24,7 +24,9 @@ class WhatYouDrink extends React.Component {
       this.setState({
         drinks: drinks
       });
-      console.log(drinks);
+      if (drinks[0] === "Вино") {
+        console.log("Yep");
+      }
     }
     // console.log(event.data);
   }
@@ -37,7 +39,12 @@ class WhatYouDrink extends React.Component {
             return <li key={inx}>{drink}</li>;
           })}
         </ul>
-        <input className="addDrink" drink={this.state.drinks} type="text" />
+        <input
+          className="addDrink"
+          drink={this.state.drinks}
+          defaultValue={this.state.text}
+          type="text"
+        />
         <button onClick={this.add}>Add</button>
         <button onClick={this.select}>Select</button>
         <DrinkList />

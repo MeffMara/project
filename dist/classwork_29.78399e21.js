@@ -24185,7 +24185,10 @@ function (_React$Component) {
         this.setState({
           drinks: drinks
         });
-        console.log(drinks);
+
+        if (drinks[0] === "Вино") {
+          console.log("Yep");
+        }
       } // console.log(event.data);
 
     }
@@ -24201,6 +24204,7 @@ function (_React$Component) {
       })), _react.default.createElement("input", {
         className: "addDrink",
         drink: this.state.drinks,
+        defaultValue: this.state.text,
         type: "text"
       }), _react.default.createElement("button", {
         onClick: this.add
@@ -24680,7 +24684,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34969" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34475" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
